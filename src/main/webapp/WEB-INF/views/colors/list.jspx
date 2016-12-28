@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_spring_domain_Color" items="${colors}" z="mK4N/nY5b148aBF+XwDlVIfWmeQ=">
+        <table:table data="${colors}" id="l_com_spring_domain_Color" path="/colors" z="wKH9L5yTO9RFHbVWRiKmkfy9ZVI=">
+            <table:column id="c_com_spring_domain_Color_name" property="name" z="JSgEF8LIkEAjKa914HgY3KbvP+M="/>
+        </table:table>
+    </page:list>
+</div>

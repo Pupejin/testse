@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_spring_domain_Inform" modelAttribute="inform" path="/informs" versionField="Version" z="dtRs96PPawo+95I2FS5j+4mbj0E=">
+        <field:select field="name" id="c_com_spring_domain_Inform_name" itemValue="id" items="${customers}" path="/customers" z="Tl0Jfr3O0zf6pxmg4xX50ynrH8c="/>
+        <field:input field="phone" id="c_com_spring_domain_Inform_phone" min="2" required="true" z="ruZUixYUpS4PRy4tyN/Ctsvl07s="/>
+        <field:select field="type" id="c_com_spring_domain_Inform_type" itemValue="id" items="${types}" path="/types" z="Br2ioj1IudfRHZStlenljv3j0wQ="/>
+        <field:input field="amount" id="c_com_spring_domain_Inform_amount" validationMessageCode="field_invalid_number" z="jnib3yJMJCsPl/OUCwZ00n/RiKY="/>
+        <field:select field="color" id="c_com_spring_domain_Inform_color" itemValue="id" items="${colors}" path="/colors" z="E3TraOpihtvK9wIqO0uek7NPomM="/>
+        <field:input field="feature" id="c_com_spring_domain_Inform_feature" min="2" required="true" z="ydgCpQM4FSAfTQcUIdlTY28sqz4="/>
+    </form:update>
+</div>
