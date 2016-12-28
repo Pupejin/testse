@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_spring_domain_Inform" items="${informs}" z="guunShqhVNy19qkLytAd1Dh9ZjQ=">
+        <table:table data="${informs}" id="l_com_spring_domain_Inform" path="/informs" z="8dtjCbxs6Knm6I3QGC8kLJ6PN/0=">
+            <table:column id="c_com_spring_domain_Inform_name" property="name" z="7ifUl9iJB95jl4+zALUaRAfELeI="/>
+            <table:column id="c_com_spring_domain_Inform_phone" property="phone" z="2NusjWovcaKFDD1jSdRcNn9BUVk="/>
+            <table:column id="c_com_spring_domain_Inform_type" property="type" z="Z7m51eso3IV8OADQosb2ov9YUGI="/>
+            <table:column id="c_com_spring_domain_Inform_amount" property="amount" z="sfjXhX/ji9ClDY1+8WvHNOnYVME="/>
+            <table:column id="c_com_spring_domain_Inform_color" property="color" z="E/B7tBADPGPtOXD4fx9PDtBzugc="/>
+            <table:column id="c_com_spring_domain_Inform_feature" property="feature" z="pZjDjcWXjEkqW9SE9aH4oQXZYe8="/>
+        </table:table>
+    </page:list>
+</div>

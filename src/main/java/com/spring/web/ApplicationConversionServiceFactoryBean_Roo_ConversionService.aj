@@ -3,7 +3,10 @@
 
 package com.spring.web;
 
+import com.spring.domain.Color;
 import com.spring.domain.Customer;
+import com.spring.domain.Inform;
+import com.spring.domain.Type;
 import com.spring.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -12,6 +15,30 @@ import org.springframework.format.FormatterRegistry;
 privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService {
     
     declare @type: ApplicationConversionServiceFactoryBean: @Configurable;
+    
+    public Converter<Color, String> ApplicationConversionServiceFactoryBean.getColorToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.spring.domain.Color, java.lang.String>() {
+            public String convert(Color color) {
+                return new StringBuilder().append(color.getName()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Color> ApplicationConversionServiceFactoryBean.getIdToColorConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.spring.domain.Color>() {
+            public com.spring.domain.Color convert(java.lang.Long id) {
+                return Color.findColor(id);
+            }
+        };
+    }
+    
+    public Converter<String, Color> ApplicationConversionServiceFactoryBean.getStringToColorConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.spring.domain.Color>() {
+            public com.spring.domain.Color convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Color.class);
+            }
+        };
+    }
     
     public Converter<Customer, String> ApplicationConversionServiceFactoryBean.getCustomerToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.spring.domain.Customer, java.lang.String>() {
@@ -37,10 +64,67 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<Inform, String> ApplicationConversionServiceFactoryBean.getInformToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.spring.domain.Inform, java.lang.String>() {
+            public String convert(Inform inform) {
+                return new StringBuilder().append(inform.getPhone()).append(' ').append(inform.getAmount()).append(' ').append(inform.getFeature()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Inform> ApplicationConversionServiceFactoryBean.getIdToInformConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.spring.domain.Inform>() {
+            public com.spring.domain.Inform convert(java.lang.Long id) {
+                return Inform.findInform(id);
+            }
+        };
+    }
+    
+    public Converter<String, Inform> ApplicationConversionServiceFactoryBean.getStringToInformConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.spring.domain.Inform>() {
+            public com.spring.domain.Inform convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Inform.class);
+            }
+        };
+    }
+    
+    public Converter<Type, String> ApplicationConversionServiceFactoryBean.getTypeToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.spring.domain.Type, java.lang.String>() {
+            public String convert(Type type) {
+                return new StringBuilder().append(type.getName()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Type> ApplicationConversionServiceFactoryBean.getIdToTypeConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.spring.domain.Type>() {
+            public com.spring.domain.Type convert(java.lang.Long id) {
+                return Type.findType(id);
+            }
+        };
+    }
+    
+    public Converter<String, Type> ApplicationConversionServiceFactoryBean.getStringToTypeConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.spring.domain.Type>() {
+            public com.spring.domain.Type convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Type.class);
+            }
+        };
+    }
+    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
+        registry.addConverter(getColorToStringConverter());
+        registry.addConverter(getIdToColorConverter());
+        registry.addConverter(getStringToColorConverter());
         registry.addConverter(getCustomerToStringConverter());
         registry.addConverter(getIdToCustomerConverter());
         registry.addConverter(getStringToCustomerConverter());
+        registry.addConverter(getInformToStringConverter());
+        registry.addConverter(getIdToInformConverter());
+        registry.addConverter(getStringToInformConverter());
+        registry.addConverter(getTypeToStringConverter());
+        registry.addConverter(getIdToTypeConverter());
+        registry.addConverter(getStringToTypeConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {
