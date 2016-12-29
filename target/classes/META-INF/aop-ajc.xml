@@ -1,0 +1,32 @@
+<aspectj>
+<aspects>
+<aspect name="com.spring.domain.Color_Roo_Configurable"/>
+<aspect name="com.spring.domain.Inform_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.spring.domain.Customer_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.spring.web.TypeController_Roo_Controller"/>
+<aspect name="com.spring.domain.Color_Roo_JavaBean"/>
+<aspect name="com.spring.domain.Type_Roo_Jpa_Entity"/>
+<aspect name="com.spring.domain.Type_Roo_JavaBean"/>
+<aspect name="com.spring.domain.Customer_Roo_Jpa_Entity"/>
+<aspect name="com.spring.web.CustomerController_Roo_Controller"/>
+<aspect name="com.spring.domain.Inform_Roo_Finder"/>
+<aspect name="com.spring.web.InformController_Roo_Controller"/>
+<aspect name="com.spring.web.ApplicationConversionServiceFactoryBean_Roo_ConversionService"/>
+<aspect name="com.spring.domain.Color_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.spring.domain.Customer_Roo_JavaBean"/>
+<aspect name="com.spring.domain.Inform_Roo_ToString"/>
+<aspect name="com.spring.domain.Type_Roo_ToString"/>
+<aspect name="com.spring.domain.Color_Roo_ToString"/>
+<aspect name="com.spring.web.ColorController_Roo_Controller"/>
+<aspect name="com.spring.domain.Color_Roo_Jpa_Entity"/>
+<aspect name="com.spring.domain.Inform_Roo_Jpa_Entity"/>
+<aspect name="com.spring.web.InformController_Roo_Controller_Finder"/>
+<aspect name="com.spring.domain.Type_Roo_Configurable"/>
+<aspect name="com.spring.domain.Type_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.spring.domain.Inform_Roo_Configurable"/>
+<aspect name="com.spring.domain.Inform_Roo_JavaBean"/>
+<aspect name="com.spring.domain.Customer_Roo_Configurable"/>
+<aspect name="com.spring.domain.Customer_Roo_ToString"/>
+</aspects>
+</aspectj>
+
